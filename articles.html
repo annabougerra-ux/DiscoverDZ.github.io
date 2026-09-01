@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Articles | Discover DZ 🇩🇿</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #FFFDF9;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #171717;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .home {
+            color: #171717;
+            text-decoration: none;
+        }
+
+        .intro {
+            max-width: 1000px;
+            margin: 70px auto 40px;
+            padding: 0 30px;
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #666;
+            font-size: 19px;
+        }
+
+        .articles {
+            max-width: 1100px;
+            margin: 50px auto 100px;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .article {
+            padding: 30px;
+            border-radius: 25px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article .emoji {
+            font-size: 42px;
+        }
+
+        .article h2 {
+            font-size: 27px;
+            margin: 15px 0 10px;
+        }
+
+        .article p {
+            color: #444;
+            flex-grow: 1;
+        }
+
+        .article a {
+            margin-top: 25px;
+            color: #171717;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .blue {
+            background: #DCEFF5;
+        }
+
+        .pink {
+            background: #F6D9E4;
+        }
+
+        .green {
+            background: #DCEBDD;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            background: #F8EDC8;
+        }
+
+        footer p {
+            color: #555;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 800px) {
+
+            .articles {
+                grid-template-columns: 1fr;
+            }
+
+            .intro h1 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="nav">
+
+            <a href="index.html" class="logo">
+                Discover DZ 🇩🇿
+            </a>
+
+            <a href="index.html" class="home">
+                ← Accueil
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <div class="intro">
+
+            <h1>Nos articles 📰</h1>
+
+            <p>
+                Histoires, culture, patrimoine et découvertes
+                autour de l'Algérie.
+            </p>
+
+        </div>
+
+
+        <div class="articles">
+
+
+            <article class="article blue">
+
+                <div class="emoji">🏛️</div>
+
+                <h2>Tipasa</h2>
+
+                <p>
+                    Découvre l'histoire de cette ancienne
+                    cité située au bord de la Méditerranée.
+                </p>
+
+                <a href="tipasa.html">
+                    Lire l'article →
+                </a>
+
+            </article>
+
+
+            <article class="article pink">
+
+                <div class="emoji">🎶</div>
+
+                <h2>Le raï</h2>
+
+                <p>
+                    Découvre l'histoire, les origines et
+                    l'évolution de cette musique algérienne.
+                </p>
+
+                <a href="#">
+                    Bientôt disponible →
+                </a>
+
+            </article>
+
+
+            <article class="article green">
+
+                <div class="emoji">🏜️</div>
+
+                <h2>Le Sahara algérien</h2>
+
+                <p>
+                    Pars à la découverte des paysages,
+                    oasis et grands espaces du Sahara.
+                </p>
+
+                <a href="#">
+                    Bientôt disponible →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <strong>
+            Discover DZ 🇩🇿
+        </strong>
+
+        <p>
+            Découvrir • Apprendre • S'amuser
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
