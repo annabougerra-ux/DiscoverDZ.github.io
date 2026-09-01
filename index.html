@@ -1,40 +1,638 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-    <title>Mon site culturel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover DZ 🇩🇿</title>
 
     <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: #FFFDF9;
+            font-family: Arial, sans-serif;
+            background: #FFFDF9;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            background: #FFFDF9;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #171717;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .menu {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu a {
+            color: #171717;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .menu a:hover {
+            opacity: 0.6;
+        }
+
+
+        /* ACCUEIL */
+
+        .hero {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 90px 50px;
+            background: #DCEFF5;
+            border-radius: 30px;
+        }
+
+        .hero small {
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            line-height: 1.05;
+            margin: 15px 0;
+            max-width: 750px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 650px;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 24px;
+            background: #171717;
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: bold;
+        }
+
+
+        /* SECTIONS */
+
+        section {
+            max-width: 1200px;
+            margin: 90px auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+
+        .section-title small {
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 5px;
+        }
+
+
+        /* CARTES */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            padding: 28px;
+            border-radius: 24px;
+            min-height: 220px;
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin: 15px 0 8px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #171717;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .blue {
+            background: #DCEFF5;
+        }
+
+        .pink {
+            background: #F6D9E4;
+        }
+
+        .green {
+            background: #DCEBDD;
+        }
+
+        .yellow {
+            background: #F8EDC8;
+        }
+
+
+        /* DESTINATIONS */
+
+        .discover {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .big-card {
+            background: #F6D9E4;
+            padding: 40px;
+            border-radius: 25px;
+            min-height: 300px;
+        }
+
+        .small-card {
+            background: #DCEBDD;
+            padding: 30px;
+            border-radius: 25px;
+            min-height: 140px;
+        }
+
+        .big-card h3,
+        .small-card h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+
+        /* QUIZ */
+
+        .quiz {
+            background: #171717;
+            color: white;
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .quiz h2 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .quiz p {
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .quiz .button {
+            background: #F8EDC8;
             color: #171717;
         }
-button {
-    background-color: #DCEFF5;button 
-    color: #171717;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 15px;
-}  
-h1 {
-    color: #F6D9E4;
-}
-p {
-    color: #DCEBDD;
-}
-   
-    </style>
 
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 100px;
+            padding: 40px 30px;
+            background: #F8EDC8;
+            text-align: center;
+        }
+
+        footer strong {
+            font-size: 20px;
+        }
+
+
+        /* TELEPHONE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+            }
+
+            .hero {
+                margin: 20px;
+                padding: 55px 30px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .discover {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .quiz {
+                padding: 40px 25px;
+            }
+
+        }
+
+    </style>
 </head>
 
+
 <body>
-    <h1>Discover DZ 🇩🇿</h1>
 
-    <p>Découvre l’Algérie autrement.</p>
 
-    <button>Découvrir</button>
+    <!-- NAVIGATION -->
+
+    <header>
+
+        <nav>
+
+            <a href="#" class="logo">
+                Discover DZ 🇩🇿
+            </a>
+
+            <div class="menu">
+
+                <a href="#destinations">Destinations</a>
+
+                <a href="#culture">Culture</a>
+
+                <a href="#patrimoine">Patrimoine</a>
+
+                <a href="#nature">Nature</a>
+
+                <a href="#gastronomie">Gastronomie</a>
+
+                <a href="#quiz">Quiz</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ACCUEIL -->
+
+    <main>
+
+        <div class="hero">
+
+            <small>BIENVENUE EN ALGÉRIE 🇩🇿</small>
+
+            <h1>
+                Découvre l'Algérie autrement.
+            </h1>
+
+            <p>
+                Des villes aux paysages, de l'histoire à la gastronomie,
+                pars à la découverte d'un pays aux mille histoires.
+            </p>
+
+            <a href="#destinations" class="button">
+                Explorer l'Algérie →
+            </a>
+
+        </div>
+
+
+
+        <!-- GRANDES CATÉGORIES -->
+
+        <section id="destinations">
+
+            <div class="section-title">
+
+                <small>EXPLORER</small>
+
+                <h2>
+                    Que veux-tu découvrir ?
+                </h2>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <div class="card blue">
+
+                    <div>🏙️</div>
+
+                    <h3>
+                        Destinations
+                    </h3>
+
+                    <p>
+                        Alger, Oran, Constantine,
+                        Tlemcen et bien d'autres villes.
+                    </p>
+
+                    <a href="#">
+                        Explorer →
+                    </a>
+
+                </div>
+
+
+
+                <div class="card pink">
+
+                    <div>🎨</div>
+
+                    <h3 id="culture">
+                        Culture
+                    </h3>
+
+                    <p>
+                        Musique, artisanat,
+                        traditions et arts algériens.
+                    </p>
+
+                    <a href="#">
+                        Découvrir →
+                    </a>
+
+                </div>
+
+
+
+                <div class="card green">
+
+                    <div>🏛️</div>
+
+                    <h3 id="patrimoine">
+                        Patrimoine
+                    </h3>
+
+                    <p>
+                        Monuments, sites historiques
+                        et lieux chargés d'histoire.
+                    </p>
+
+                    <a href="#">
+                        Découvrir →
+                    </a>
+
+                </div>
+
+
+
+                <div class="card yellow">
+
+                    <div>🏜️</div>
+
+                    <h3 id="nature">
+                        Nature
+                    </h3>
+
+                    <p>
+                        Sahara, montagnes, plages,
+                        oasis et paysages.
+                    </p>
+
+                    <a href="#">
+                        Explorer →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- À DÉCOUVRIR -->
+
+        <section>
+
+            <div class="section-title">
+
+                <small>À NE PAS MANQUER</small>
+
+                <h2>
+                    Quelques incontournables
+                </h2>
+
+            </div>
+
+
+            <div class="discover">
+
+
+                <div class="big-card">
+
+                    <h3>
+                        🏙️ Alger
+                    </h3>
+
+                    <p>
+                        La capitale algérienne, entre mer,
+                        histoire, architecture et vie culturelle.
+                    </p>
+
+                    <br>
+
+                    <a href="#" class="button">
+                        Découvrir Alger
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <div class="small-card">
+
+                        <h3>
+                            🏺 Tipasa
+                        </h3>
+
+                        <p>
+                            Un patrimoine antique
+                            au bord de la Méditerranée.
+                        </p>
+
+                    </div>
+
+                    <br>
+
+                    <div class="small-card">
+
+                        <h3>
+                            🏜️ Le Sahara
+                        </h3>
+
+                        <p>
+                            Un immense territoire
+                            de paysages exceptionnels.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- GASTRONOMIE -->
+
+        <section id="gastronomie">
+
+            <div class="section-title">
+
+                <small>À TABLE 🇩🇿</small>
+
+                <h2>
+                    Les saveurs de l'Algérie
+                </h2>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card yellow">
+
+                    <div>🍲</div>
+
+                    <h3>
+                        Plats traditionnels
+                    </h3>
+
+                    <p>
+                        Découvre les plats qui font
+                        partie de la cuisine algérienne.
+                    </p>
+
+                </div>
+
+
+                <div class="card pink">
+
+                    <div>🍵</div>
+
+                    <h3>
+                        Boissons & douceurs
+                    </h3>
+
+                    <p>
+                        Thé, pâtisseries et autres
+                        spécialités à découvrir.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- QUIZ -->
+
+        <section id="quiz">
+
+            <div class="quiz">
+
+                <h2>
+                    🎮 Teste tes connaissances !
+                </h2>
+
+                <p>
+                    Penses-tu bien connaître l'Algérie ?
+                    Relève notre quiz culturel.
+                </p>
+
+                <a href="#" class="button">
+                    Commencer le quiz →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <strong>
+            Discover DZ 🇩🇿
+        </strong>
+
+        <p>
+            Découvrir • Apprendre • S'amuser
+        </p>
+
+        <p>
+            © 2026 Discover DZ
+        </p>
+
+    </footer>
+
 
 </body>
-    
 
-</body>
 </html>
