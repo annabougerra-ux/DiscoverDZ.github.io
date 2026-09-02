@@ -5,76 +5,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Articles - Discover DZ 🇩🇿</title>
+    <title>Tipasa | Discover DZ 🇩🇿</title>
 
     <style>
 
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: Arial, sans-serif;
             background: #FFFDF9;
             color: #171717;
+            line-height: 1.7;
         }
 
         header {
-            padding: 20px 40px;
             background: #FFFDF9;
             border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
         }
 
         .logo {
+            color: #171717;
+            text-decoration: none;
             font-size: 24px;
             font-weight: bold;
-            text-decoration: none;
+        }
+
+        .home {
             color: #171717;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .intro {
-            text-align: center;
-            padding: 70px 20px 40px;
-        }
-
-        .intro h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        .intro p {
-            color: #666;
-            font-size: 18px;
-        }
-
-        .articles {
+        .hero {
             max-width: 1100px;
-            margin: 30px auto 80px;
-            padding: 0 25px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            margin: 45px auto;
+            padding: 80px 50px;
+            background: #DCEFF5;
+            border-radius: 30px;
         }
 
-        .article {
-            padding: 30px;
-            border-radius: 25px;
-            min-height: 250px;
+        .hero small {
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
-        .article h2 {
-            font-size: 25px;
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.05;
+            margin: 15px 0;
+            max-width: 850px;
         }
 
-        .article p {
+        .hero p {
+            font-size: 20px;
+            max-width: 750px;
             color: #444;
         }
 
-        .article a {
-            color: #171717;
-            font-weight: bold;
-            text-decoration: none;
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 25px;
         }
 
-        .blue {
+        section {
+            margin: 75px 0;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        section h3 {
+            font-size: 26px;
+            margin: 30px 0 10px;
+        }
+
+        .intro {
+            background: #F8EDC8;
+            padding: 35px;
+            border-radius: 25px;
+            font-size: 19px;
+        }
+
+        .paragraph {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .planning {
+            display: grid;
+            gap: 20px;
+        }
+
+        .planning-card {
+            padding: 30px;
+            border-radius: 25px;
+        }
+
+        .morning {
             background: #DCEFF5;
+        }
+
+        .visit {
+            background: #F6D9E4;
+        }
+
+        .kids {
+            background: #DCEBDD;
+        }
+
+        .warning {
+            background: #F8EDC8;
+        }
+
+        .lunch {
+            background: #F6D9E4;
+        }
+
+        .afternoon {
+            background: #DCEFF5;
+        }
+
+        .evening {
+            background: #DCEBDD;
+        }
+
+        .list {
+            margin: 15px 0 0 20px;
+        }
+
+        .list li {
+            margin-bottom: 10px;
+        }
+
+        .top {
+            display: grid;
+            gap: 20px;
+        }
+
+        .top-card {
+            padding: 30px;
+            border-radius: 25px;
+        }
+
+        .gold {
+            background: #F8EDC8;
         }
 
         .pink {
@@ -85,99 +179,656 @@
             background: #DCEBDD;
         }
 
+        .rating {
+            font-size: 22px;
+            margin-top: 12px;
+        }
+
+        .poll {
+            background: #DCEFF5;
+            padding: 30px;
+            border-radius: 25px;
+            margin-top: 25px;
+        }
+
+        .poll label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .poll button {
+            margin-top: 15px;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 12px;
+            background: #171717;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         footer {
+            margin-top: 100px;
+            padding: 45px 25px;
             text-align: center;
-            padding: 40px;
             background: #F8EDC8;
         }
 
-        @media (max-width: 800px) {
-            .articles {
-                grid-template-columns: 1fr;
+        footer strong {
+            font-size: 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero {
+                margin: 20px;
+                padding: 55px 30px;
             }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            section h2 {
+                font-size: 30px;
+            }
+
         }
 
     </style>
 </head>
 
-
 <body>
 
     <header>
 
-        <a href="index.html" class="logo">
-            Discover DZ 🇩🇿
-        </a>
+        <nav>
+
+            <a href="index.html" class="logo">
+                Discover DZ 🇩🇿
+            </a>
+
+            <a href="articles.html" class="home">
+                ← Articles
+            </a>
+
+        </nav>
 
     </header>
 
 
+    <div class="hero">
+
+        <small>DISCOVER DZ 🇩🇿 • GUIDE TIPASA</small>
+
+        <h1>
+            Tipasa, entre histoire et Méditerranée 🏺🌊
+        </h1>
+
+        <p>
+            Une journée pour découvrir les ruines, profiter de la mer
+            et créer de beaux souvenirs en famille.
+        </p>
+
+    </div>
+
+
     <main>
 
-        <div class="intro">
 
-            <h1>Nos articles 📰</h1>
+        <section>
 
-            <p>
-                Histoires, culture, patrimoine et découvertes
-                autour de l'Algérie.
+            <div class="intro">
+
+                <h2>Introduction</h2>
+
+                <p>
+                    En passant par ces ruines romaines ou par ces plages
+                    méditerranéennes, Tipasa est une ville intéressante…
+                    et pleine de surprises ! Alors, allons la découvrir ensemble.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>🏛️ Une ville chargée d’histoire</h2>
+
+            <p class="paragraph">
+                Avant de parler de son présent, parlons de son passé.
+                Tipasa est une très vieille ville : elle date de l’Antiquité.
+                Fondée par les Phéniciens au IVᵉ siècle avant notre ère,
+                elle fut ensuite conquise par les Romains, avant de devenir
+                une base stratégique de Rome dans la conquête du royaume
+                de Maurétanie.
             </p>
 
-        </div>
+        </section>
 
 
-        <div class="articles">
+        <section>
+
+            <h2>🏺 Les vestiges antiques</h2>
+
+            <p class="paragraph">
+                Ses ruines sont véritablement impressionnantes, car elles
+                sont grandes et majestueuses. Vous verrez sans doute les
+                maisons romaines, l’amphithéâtre, etc. Je ne veux pas vous
+                gâcher la surprise !
+            </p>
+
+            <p class="paragraph">
+                Je vous propose un petit planning, mais si vous voulez le
+                faire vous-même, c’est à vous de décider !
+            </p>
+
+        </section>
 
 
-            <article class="article blue">
+        <section>
 
-                <h2>🏛️ Tipasa</h2>
+            <h2>🗺️ Petit planning des ruines</h2>
+
+            <div class="planning">
+
+
+                <div class="planning-card morning">
+
+                    <h3>☀️ MATIN</h3>
+
+                    <p>
+                        Pour moi, le mieux pour visiter Tipasa, surtout les ruines,
+                        est de se réveiller de bonne heure. Prenez la route vers
+                        neuf heures et vous arriverez vers dix heures.
+                    </p>
+
+                    <p>
+                        Pour trouver votre chemin, vous verrez un sentier parsemé
+                        de boutiques et de restaurants. Suivez-le et vous trouverez
+                        en un rien de temps l’accueil !
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card visit">
+
+                    <h3>🏺 DÉBUT DE VISITE</h3>
+
+                    <p>
+                        Vous êtes arrivés, super ! Vous pouvez commencer la visite.
+                        Si vous voulez en apprendre davantage, il y a des plaques
+                        qui racontent l’histoire des lieux.
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card kids">
+
+                    <h3>🧒 LE COIN KIDS</h3>
+
+                    <p>
+                        Si votre enfant s’ennuie, vous pouvez jouer à faire semblant
+                        d’être des Romains ! Par exemple, entrez dans l’amphithéâtre
+                        avec lui, puis expliquez-lui à quoi servaient les amphithéâtres
+                        et comment ils étaient utilisés.
+                    </p>
+
+                    <p>
+                        Ainsi, l’enfant pourra apprendre des choses tout en s’amusant !
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card warning">
+
+                    <h3>⚠️ AVERTISSEMENT</h3>
+
+                    <p>
+                        Faites attention à ne pas tomber. Si vous trouvez certains
+                        chemins trop escarpés ou difficiles pour vos enfants,
+                        mieux vaut ne pas les emprunter avec eux.
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card lunch">
+
+                    <h3>🍽️ MIDI</h3>
+
+                    <p>
+                        Cette fois, vous avez deux choix : soit vous prenez un
+                        pique-nique, soit vous allez au restaurant.
+                    </p>
+
+                    <p>
+                        Si vous choisissez le pique-nique — pour moi, c’est la
+                        meilleure option — essayez d’aller du côté des maisons
+                        romaines.
+                    </p>
+
+                    <p>
+                        Lors de ma visite, j’ai pu pique-niquer dans cette partie
+                        du site. Une seule règle : <strong>NE JETEZ PAS VOS
+                        DÉCHETS PAR TERRE !</strong> ♻️
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card kids">
+
+                    <h3>🧒 LE COIN KIDS DU MIDI</h3>
+
+                    <p>
+                        Faites de petites devinettes à votre enfant ! Dites-lui,
+                        par exemple, de retrouver la cuisine ou le salon avant
+                        de commencer à manger.
+                    </p>
+
+                    <p>
+                        Cela peut transformer la pause en petit jeu d’exploration.
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card afternoon">
+
+                    <h3>☀️ L’APRÈS-MIDI AU SOLEIL</h3>
+
+                    <p>
+                        Faites attention au chemin qui mène… à la plage !
+                        Vous pouvez enfin vous détendre après toute cette marche.
+                    </p>
+
+                    <p>
+                        Un conseil : allongez-vous sur le sable fin, mais ne perdez
+                        surtout pas votre enfant des yeux !
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card kids">
+
+                    <h3>🧒 LE COIN KIDS — À LA PLAGE</h3>
+
+                    <p>
+                        Emmenez votre enfant dans la mer et faites-lui une pêche
+                        au trésor ! Celui qui ramasse le plus de pierres colorées
+                        a gagné !
+                    </p>
+
+                    <p>
+                        Vous pouvez aussi faire une partie de cache-cache dans
+                        les petits espaces accessibles des vestiges romains.
+                    </p>
+
+                    <p>
+                        Et pour finir, prenez le goûter au soleil, dans un endroit
+                        autorisé et sûr, tout en profitant du paysage.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>🧒 Le Coin Kids : la journée vacances</h2>
+
+            <p class="paragraph">
+
+                Vous êtes toujours à Tipasa ! Le premier jour s’est bien passé ?
+                Super ! Aujourd’hui, je propose que ce soit <strong>la journée
+                vacances de votre enfant</strong> !
+
+                Prêts ? C’est parti ! 🎉
+
+            </p>
+
+
+            <div class="planning">
+
+
+                <div class="planning-card morning">
+
+                    <h3>☀️ MATIN DU KIDS</h3>
+
+                    <p>
+                        C’est parti pour un petit déjeuner spécial pour les kids !
+                        Préparez-lui des pancakes avec :
+                    </p>
+
+                    <ul class="list">
+                        <li>🍌 un grand sourire en banane</li>
+                        <li>🍓 un nez en fraise</li>
+                        <li>🥝 des yeux en kiwi</li>
+                        <li>🍓 des joues en confiture</li>
+                        <li>🍦 des cheveux en crème chantilly</li>
+                    </ul>
+
+                    <p>
+                        Voilà de quoi donner la pêche à votre enfant pour commencer
+                        la journée !
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card afternoon">
+
+                    <h3>🏖️ TOUS À LA PLAYA !</h3>
+
+                    <p>
+                        Qu’est-ce que les enfants préfèrent pendant les vacances ?
+                        <strong>La plage, bien sûr !</strong> 😄
+                    </p>
+
+                    <p>
+                        Faites-lui construire un grand château de sable et fabriquez
+                        des petites figurines avec lui ! Vous pouvez même inventer
+                        une histoire autour de votre château.
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card lunch">
+
+                    <h3>🍽️ LE KIDS LUNCH</h3>
+
+                    <p>
+                        Faites goûter à votre enfant différents plats à l’aveugle,
+                        pour l’aider à mieux développer ses sens !
+                    </p>
+
+                    <p>
+                        Une activité amusante qui lui donnera presque l’impression
+                        de participer à une épreuve de Koh-Lanta ! 🏝️
+                    </p>
+
+                    <p>
+                        Le but ? Lui faire deviner ce qu’il mange en utilisant
+                        seulement son goût et son odorat.
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card kids">
+
+                    <h3>🏴‍☠️ LE DÉFI DU SUPER KIDS</h3>
+
+                    <p>
+                        Envie de transformer la journée en véritable chasse au
+                        trésor ? Préparez une carte au trésor, une liste de défis,
+                        un mini coffre au trésor et quelques pièces en chocolat !
+                    </p>
+
+                    <p>
+                        Donnez le premier indice à votre enfant. Vous pouvez préparer
+                        de petites énigmes ou même des devinettes sur Tipasa.
+                    </p>
+
+                    <p>
+                        L’enfant reste avec papa ou maman pendant que l’autre parent
+                        l’attend à la destination suivante avec le prochain indice.
+                        Ainsi, l’aventure continue au fil de la journée !
+                    </p>
+
+                    <p>
+                        Une fois que l’enfant a trouvé la liste de défis, il doit
+                        les réaliser. Par exemple :
+                        <strong>« Va demander au serveur combien coûte ta glace
+                        en arabe ! »</strong> 🍦🇩🇿
+                    </p>
+
+                    <p>
+                        L’enfant s’amuse tout en découvrant une autre langue et une
+                        autre culture. Et si les parents ne parlent pas arabe,
+                        ce n’est pas grave : ils peuvent chercher ensemble et
+                        apprendre eux aussi !
+                    </p>
+
+                    <p>
+                        Une activité où <strong>tout le monde devient explorateur…
+                        et où tout le monde apprend !</strong> 🗺️🏺
+                    </p>
+
+                </div>
+
+
+                <div class="planning-card evening">
+
+                    <h3>🌙 LA VEILLÉE DES ÉTOILES</h3>
+
+                    <p>
+                        Pour clore cette journée, faisons une petite veillée nocturne !
+                    </p>
+
+                    <p>
+                        Installez-vous confortablement dans votre lit. Et qu’est-ce
+                        qu’il faut pour aider un enfant à s’endormir ?
+                        <strong>Une histoire, bien sûr !</strong> 📖✨
+                    </p>
+
+                    <p>
+                        Chacun son tour, racontez un petit morceau de l’histoire
+                        pour l’aider à s’endormir tout en stimulant son imagination.
+                    </p>
+
+                    <p>
+                        Puis, mettez une musique calme et relaxante et laissez
+                        la magie opérer… 🌌🎶
+                    </p>
+
+                    <p>
+                        Et s’il vous dit qu’il a peur des monstres, préparez à
+                        l’avance un petit vaporisateur rempli d’eau avec une
+                        étiquette : <strong>« Spray anti-monstres »</strong> 👻💦
+                    </p>
+
+                    <p>
+                        Une petite touche d’humour pour rassurer les petits
+                        aventuriers avant de fermer les yeux.
+                    </p>
+
+                    <p><strong>Bonne nuit ! 🌙✨</strong></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>✨ Les petits plus</h2>
+
+            <p class="paragraph">
+                Les meilleures choses sont parfois connues… ou pas !
+                Voici notre <strong>Top 3 des choses à découvrir à Tipasa</strong>.
+            </p>
+
+
+            <div class="top">
+
+                <div class="top-card gold">
+
+                    <h3>🥇 #1 — Les ruines romaines</h3>
+
+                    <p>
+                        Franchement, ce n’est pas cher du tout pour une attraction
+                        qui coûterait au moins 20 € par personne en France !
+                        Ici, l’entrée est vraiment très abordable.
+                    </p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐ 5 étoiles !
+                    </div>
+
+                </div>
+
+
+                <div class="top-card pink">
+
+                    <h3>🥈 #2 — Le Tombeau de la Chrétienne</h3>
+
+                    <p>
+                        Gratuit, joli à voir et très impressionnant par sa taille.
+                    </p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐ 4 étoiles !
+                    </div>
+
+                </div>
+
+
+                <div class="top-card green">
+
+                    <h3>🥉 #3 — La playa</h3>
+
+                    <p>
+                        Très agréable pour se détendre, mais beaucoup trop chère
+                        à mon goût.
+                    </p>
+
+                    <div class="rating">
+                        ⭐⭐⭐ 3 étoiles !
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>🍽️ Les petits Miam Plus</h2>
+
+            <p class="paragraph">
+                Les restaurants sont nos endroits préférés en vacances !
+                Voici notre <strong>Top 3 des restos à Tipasa</strong> :
+            </p>
+
+
+            <div class="top">
+
+
+                <div class="top-card gold">
+
+                    <h3>🥇 #1 — La Couronne</h3>
+
+                    <p>
+                        Très bon restaurant, un peu cher, mais pour ce que c’est,
+                        ça vaut le coup !
+                    </p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐½ 4,5 étoiles !
+                    </div>
+
+                </div>
+
+
+                <div class="top-card pink">
+
+                    <h3>🥈 #2 — Le Romarin</h3>
+
+                    <p>
+                        Une cuisine 100 % algérienne, alors ça mérite bien
+                        4 étoiles !
+                    </p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐ 4 étoiles !
+                    </div>
+
+                </div>
+
+
+                <div class="top-card green">
+
+                    <h3>🥉 #3 — À vous de choisir !</h3>
+
+                    <p>
+                        Quel est votre restaurant préféré à Tipasa ?
+                        Votez dans notre sondage pour décider qui prendra
+                        la troisième place !
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="poll">
+
+                <h3>🗳️ Votre vote</h3>
 
                 <p>
-                    Découvre l'histoire de cette ancienne
-                    cité située au bord de la Méditerranée.
+                    Quel restaurant mérite la troisième place ?
                 </p>
 
-                <a href="#">
-                    Lire l'article →
-                </a>
+                <label>
+                    <input type="radio" name="restaurant">
+                    Restaurant 1
+                </label>
 
-            </article>
+                <label>
+                    <input type="radio" name="restaurant">
+                    Restaurant 2
+                </label>
+
+                <label>
+                    <input type="radio" name="restaurant">
+                    Restaurant 3
+                </label>
+
+                <button type="button">
+                    Voter
+                </button>
+
+            </div>
+
+        </section>
 
 
-            <article class="article pink">
+        <section>
 
-                <h2>🎶 Le raï</h2>
+            <div class="intro">
+
+                <h2>🇩🇿 À retenir</h2>
 
                 <p>
-                    Découvre l'histoire et les origines
-                    de cette musique emblématique.
+                    Tipasa, c’est à la fois l’histoire, les ruines, la Méditerranée,
+                    les découvertes et les moments en famille. Une destination
+                    où l’on peut apprendre, explorer et surtout profiter !
                 </p>
 
-                <a href="#">
-                    Lire l'article →
-                </a>
+            </div>
 
-            </article>
+        </section>
 
-
-            <article class="article green">
-
-                <h2>🏜️ Le Sahara</h2>
-
-                <p>
-                    Pars à la découverte des paysages
-                    extraordinaires du Sahara algérien.
-                </p>
-
-                <a href="#">
-                    Lire l'article →
-                </a>
-
-            </article>
-
-
-        </div>
 
     </main>
 
@@ -187,7 +838,11 @@
         <strong>Discover DZ 🇩🇿</strong>
 
         <p>
-            Découvrir • Apprendre • S'amuser
+            Découvrir • Apprendre • S’amuser
+        </p>
+
+        <p>
+            © 2026 Discover DZ
         </p>
 
     </footer>
